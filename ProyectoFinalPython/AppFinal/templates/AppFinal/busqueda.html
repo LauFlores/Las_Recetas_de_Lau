@@ -1,0 +1,37 @@
+
+    {% extends "AppFinal/padre.html" %}
+    {% block Contenido %}
+    
+    
+    Busqueda de Recetas
+    
+    <form action="" method="GET">
+        {{busqueda_formulario}}
+        <button type="submit">Buscar</button>
+    </form>
+        {% if resultado %}
+        
+            <ul>
+                {% for receta in resultado %}
+                
+
+                <div class="card" style="width: 18rem">
+                    <img src="{{receta.image.url}}" class="card-img-top" >
+                    <div class="card-body">
+                    <h5 class="card-title">{{receta.title}}</h5>
+                    <p class="card-text">Time: {{receta.time}}min</p>
+                    
+
+                    
+                    <a href="/detallerecetas/{{receta.id}}/" class="btn btn-primary">Leer más...</a>
+                    
+                </div>
+                </div>
+                   
+                {% endfor %}
+                </ul>
+        
+        
+        {% endif %}
+    
+    {% endblock %}
