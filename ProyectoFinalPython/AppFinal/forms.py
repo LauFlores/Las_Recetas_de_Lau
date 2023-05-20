@@ -12,7 +12,7 @@ class Client_Form(UserCreationForm,forms.ModelForm):
 class Recipe_Form(UserCreationForm,forms.ModelForm):
     class Meta:
         model = Recipe
-        fields = ["title", "time", "ingredients", "directions", "highlight","public", "image"]
+        fields = ["title", "time", "ingredients", "directions", "highlight","public", "author","date", "image"]
 
 
 class Comment_form(forms.ModelForm):

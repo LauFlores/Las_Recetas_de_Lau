@@ -6,10 +6,16 @@
             <div class="card" style="width: 70rem">
                 <center><img class="grande2" src="{{object.image.url}}" class="card-img-top" >
                 <div class="card-body">
-                <h5 class="card-title">{{object.title}}</h5>
+                <h3 class="card-title">{{object.title}}</h3>
                 <p class="card-text">Time: {{object.time}}min</p>
-                <p class="card-text">{{object.ingredients}}</p>
-                <p class="card-text">{{object.directions}}</p>
+                <br>
+                <h4>Ingredientes</h4>
+                {{object.ingredients|linebreaks}}
+                <br>
+                <h4>Pasos</h4>
+                {{object.directions|linebreaks}}
+                <p class="card-text">Autor: {{object.author}}</p>
+                <p class="card-text">{{object.date}}</p>
                 
 
                 {% if request.user.is_authenticated %}

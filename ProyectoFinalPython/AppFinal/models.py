@@ -17,6 +17,8 @@ class Recipe(models.Model):
     directions = models.TextField()
     highlight = models.CharField(max_length=30)
     public = models.BooleanField(default= True)
+    author=models.CharField(max_length= 80)
+    date=models.DateField(null=True)
     image = models.ImageField(upload_to='receta_image', default='receta_image/descarga.png')
     users_wishlist = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="user_wishlist", blank=True)
    

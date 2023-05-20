@@ -44,13 +44,13 @@ class CreateRecipe(LoginRequiredMixin, CreateView):
 
     model = Recipe
     success_url = reverse_lazy("Recetas")
-    fields = ["title", "time", "ingredients", "directions","highlight", "public", "image"]
+    fields = ["title", "time", "ingredients", "directions","highlight", "public","author","date", "image"]
 
 
 class UpdateRecipe(LoginRequiredMixin, UpdateView):
     model = Recipe
     template_name = 'AppFinal/actualizarReceta.html'
-    fields = ["title", "time", "ingredients","directions","highlight","public","image"]
+    fields = ["title", "time", "ingredients","directions","highlight","public","author","date","image"]
     success_url = reverse_lazy("Recetas")
 
 class DeleteRecipe(LoginRequiredMixin,DeleteView):
@@ -74,7 +74,7 @@ def busqueda_recetas(request):
     busqueda_formulario = BusquedaRecetas()
 
     if request.GET:
-        resultado = Recipe.objects.filter(name__icontains = request.GET["search"]).all()
+        resultado = Recipe.objects.filter(title__icontains = request.GET["search"]).all()
 
     else:
         resultado = []
