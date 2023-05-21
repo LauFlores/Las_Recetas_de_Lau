@@ -27,7 +27,11 @@
                 <div class="form-group">
                     {{form}}
                 </div>
-                <button class="btn btn-primary btn-block" type="submit">Comentar</button>
+                {% if request.user.is_authenticated %}
+                    <button class="btn btn-primary btn-block" type="submit">Comentar</button>
+                {% else %}
+                    <a href="/comentariofallido" class="btn btn-primary">Dejar comentario</a>
+                {% endif %}
               </form>
               {% endif %}
             </div>
