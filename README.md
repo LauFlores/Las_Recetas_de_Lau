@@ -1,8 +1,12 @@
 
 CoderHouse
+
 Curso: Python
+
 Profesor: David Bustos Usta
+
 Comisión: 40435
+
 Alumna:Laura Flores
 
 Video: https://youtu.be/9qrylg5bstg
